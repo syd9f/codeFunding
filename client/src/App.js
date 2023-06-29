@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import Login from './pages/Login';
-import Projects from './pages/Projects';
+import Projects from './pages/Home';
 import Signup from './pages/Signup';
-import User from './pages/User';
+import User from './pages/Profile';
 
 const client = new ApolloClient({
   uri: '/graphql',
