@@ -4,12 +4,12 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import CommentList from '../components/CommentList';
-import CommentForm from '../components/CommentForm';
+import ProjectList from '../components/ProjectList';
+import ProjectForm from '../components/ProjectForm';
 
 import { QUERY_SINGLE_THOUGHT } from '../utils/queries';
 
-const SingleThought = () => {
+const CreateProject = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
   const { thoughtId } = useParams();
 
@@ -46,13 +46,13 @@ const SingleThought = () => {
       </div>
 
       <div className="my-5">
-        <CommentList comments={thought.comments} />
+        <ProjectList comments={thought.comments} />
       </div>
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <CommentForm thoughtId={thought._id} />
+        <ProjectForm thoughtId={thought._id} />
       </div>
     </div>
   );
 };
 
-export default SingleThought;
+export default CreateProject;
