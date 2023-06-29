@@ -1,22 +1,35 @@
 import { gql } from '@apollo/client';
 
-export const QUERY_TECH = gql`
-  query tech {
-    tech {
-      _id
-      name
+export const GET_USER = gql`
+  query GetUser {
+    getUser {
+      id
+      email
+      // Include any additional user fields you want to retrieve
     }
   }
 `;
 
-export const QUERY_MATCHUPS = gql`
-  query matchups($_id: String) {
-    matchups(_id: $_id) {
-      _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
+export const GET_PROJECT = gql`
+  query GetProject($projectId: ID!) {
+    getProject(projectId: $projectId) {
+      id
+      title
+      description
+      goalAmount
+      // Include any additional project fields you want to retrieve
+    }
+  }
+`;
+
+export const GET_PROJECTS = gql`
+  query GetProjects {
+    getProjects {
+      id
+      title
+      description
+      goalAmount
+      // Include any additional project fields you want to retrieve
     }
   }
 `;

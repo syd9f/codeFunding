@@ -1,23 +1,46 @@
 import { gql } from '@apollo/client';
 
-export const CREATE_MATCHUP = gql`
-  mutation createMatchup($tech1: String!, $tech2: String!) {
-    createMatchup(tech1: $tech1, tech2: $tech2) {
-      _id
-      tech1
-      tech2
+export const REGISTER_USER = gql`
+  mutation RegisterUser($email: String!, $password: String!) {
+    registerUser(email: $email, password: $password) {
+      id
+      email
+      // Include any additional user fields you want to retrieve after registration
     }
   }
 `;
 
-export const CREATE_VOTE = gql`
-  mutation createVote($_id: String!, $techNum: Int!) {
-    createVote(_id: $_id, techNum: $techNum) {
-      _id
-      tech1
-      tech2
-      tech1_votes
-      tech2_votes
+export const LOGIN_USER = gql`
+  mutation LoginUser($email: String!, $password: String!) {
+    loginUser(email: $email, password: $password) {
+      token
+      user {
+        id
+        email
+        // Include any additional user fields you want to retrieve after login
+      }
     }
   }
 `;
+
+export const CREATE_PROJECT = gql`
+  mutation CreateProject($title: String!, $description: String!, $goalAmount: Float!) {
+    createProject(title: $title, description: $description, goalAmount: $goalAmount) {
+      id
+      title
+      description
+      goalAmount
+      // Include any additional project fields you want to retrieve after creation
+    }
+  }
+`;
+
+export const MAKE_DONATION = gql`
+  mutation MakeDonation($projectId: ID!, $amount: Float!) {
+    makeDonation(projectId: $projectId, amount: $amount) {
+      id
+      // Include any additional fields you want to retrieve after donation
+    }
+  }
+`;
+
