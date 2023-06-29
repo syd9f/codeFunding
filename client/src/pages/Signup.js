@@ -1,63 +1,100 @@
-import { useQuery, useMutation } from '@apollo/client';
-import { useParams, Link } from 'react-router-dom';
-import { CREATE_VOTE } from '../utils/mutations';
-import { QUERY_MATCHUPS } from '../utils/queries';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-const Vote = () => {
-  let { id } = useParams();
+import { useMutation } from '@apollo/client';
+import { REGISTER_USER } from '../utils/mutations';
 
-  const { loading, data } = useQuery(QUERY_MATCHUPS, {
-    variables: { _id: id },
+import Auth from '../utils/auth';
+
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
   });
+  const [addUser, { error, data }] = useMutation(REGISTER_USER);
 
-  const matchup = data?.matchups || [];
+  const handleChange = (event) => {
+    const { name, value } = event.target;
 
-  const [createVote, { error }] = useMutation(CREATE_VOTE);
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
 
-  const handleVote = async (techNum) => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
     try {
-      await createVote({
-        variables: { _id: id, techNum: techNum },
+      const { data } = await addUser({
+        variables: { ...formState },
       });
-    } catch (err) {
-      console.error(err);
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
     }
   };
 
   return (
-    <div className="card bg-white card-rounded w-50">
-      <div className="card-header bg-dark text-center">
-        <h1>Here is the matchup!</h1>
-      </div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="card-body text-center mt-3">
-          <h2>
-            {matchup[0].tech1} vs. {matchup[0].tech2}
-          </h2>
-          <h3>
-            {matchup[0].tech1_votes} : {matchup[0].tech2_votes}
-          </h3>
-          <button className="btn btn-info" onClick={() => handleVote(1)}>
-            Vote for {matchup[0].tech1}
-          </button>{' '}
-          <button className="btn btn-info" onClick={() => handleVote(2)}>
-            Vote for {matchup[0].tech2}
-          </button>
-          <div className="card-footer text-center m-3">
-            <br></br>
-            <Link to="/">
-              <button className="btn btn-lg btn-danger">
-                View all matchups
-              </button>
-            </Link>
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <div className="card-body">
+            {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  className="form-input"
+                  placeholder="Your username"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                />
+                <input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                />
+                <button
+                  className="btn btn-block btn-primary"
+                  style={{ cursor: 'pointer' }}
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+            )}
+
+            {error && (
+              <div className="my-3 p-3 bg-danger text-white">
+                {error.message}
+              </div>
+            )}
           </div>
         </div>
-      )}
-      {error && <div>Something went wrong...</div>}
-    </div>
+      </div>
+    </main>
   );
 };
 
-export default Vote;
+export default Signup;
