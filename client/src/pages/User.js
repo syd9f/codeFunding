@@ -5,14 +5,14 @@ import { useQuery } from '@apollo/client';
 import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
 
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { GET_USER, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
 const Profile = () => {
   const { username: userParam } = useParams();
 
-  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  const { loading, data } = useQuery(userParam ? GET_USER : QUERY_ME, {
     variables: { username: userParam },
   });
 
