@@ -1,4 +1,5 @@
 import decode from 'jwt-decode';
+//we are having issues with jwt decode preventing the app from running
 
 class AuthService {
   getProfile() {
