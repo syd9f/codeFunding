@@ -3,13 +3,13 @@ const likeSchema = require('./Like')
 
 //most of this is referencing NoSql activity 22
 const projectSchema = new Schema({
-    projectTitle: {
+    title: {
         type: String,
         required: true,
         minLength: 1,
         maxLength: 50
     },
-    projectDescription: {
+    description: {
         type: String,
         required: true,
         minLength: 1,
