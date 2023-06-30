@@ -4,6 +4,8 @@ const typeDefs = gql`
   type User {
     _id: ID!
     username: String!
+    email: String!
+    password: String!
     projects: [Project!]
   }
 
@@ -21,6 +23,11 @@ const typeDefs = gql`
     amount: Int!
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type Query {
     users: [User]
     oneUser: User
@@ -29,8 +36,10 @@ const typeDefs = gql`
   }
 
   type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    addThought(thoughtText: String!)
     createProject(tech1: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
   }
 `;
 
