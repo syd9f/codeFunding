@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
 import { CREATE_PROJECT } from '../utils/mutations';
-import { GET_PROJECT, GET_PROJECTS, GET_USER } from '../utils/queries';
+import { GET_PROJECTS, GET_USER } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
@@ -15,7 +15,7 @@ const ProjectForm = () => {
   const [addProject, { error }] = useMutation(CREATE_PROJECT, {
     update(cache, { data: { addProject } }) {
       try {
-        const { projects } = cache.readQuery({ query: CREATE_PROJECT });
+        const { projects } = cache.readQuery({ query: GET_PROJECTS });
 
         cache.writeQuery({
           query: GET_PROJECTS,
