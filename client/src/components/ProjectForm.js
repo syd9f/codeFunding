@@ -62,7 +62,7 @@ const ProjectForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>Fueling Code, Funding Ideas</h3>
 
       {Auth.loggedIn() ? (
         <>
