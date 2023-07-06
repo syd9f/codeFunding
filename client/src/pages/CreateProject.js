@@ -4,33 +4,33 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import ProjectList from '../components/ProjectList';
+// import ProjectList from '../components/ProjectList';
 import ProjectForm from '../components/ProjectForm';
 
-import { QUERY_SINGLE_THOUGHT } from '../utils/queries';
+import { GET_PROJECT } from '../utils/queries';
 
 const CreateProject = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
-  const { thoughtId } = useParams();
+  const { projectId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_SINGLE_THOUGHT, {
+  const { loading, data } = useQuery(GET_PROJECT, {
     // pass URL parameter
-    variables: { thoughtId: thoughtId },
+    variables: { projectId: projectId },
   });
 
-  const thought = data?.thought || {};
+  const Project = data?.project || {};
 
   if (loading) {
     return <div>Loading...</div>;
   }
   return (
     <div className="my-3">
-      <h3 className="card-header bg-dark text-light p-2 m-0">
-        {thought.thoughtAuthor} <br />
+      {/* <h3 className="card-header bg-dark text-light p-2 m-0">
+        {Project.thoughtAuthor} <br />
         <span style={{ fontSize: '1rem' }}>
           had this thought on {thought.createdAt}
         </span>
-      </h3>
+      </h3> */}
       <div className="bg-light py-4">
         <blockquote
           className="p-4"
@@ -41,15 +41,15 @@ const CreateProject = () => {
             lineHeight: '1.5',
           }}
         >
-          {thought.thoughtText}
+          {Project.projectTitle}
         </blockquote>
       </div>
 
-      <div className="my-5">
+      {/* <div className="my-5">
         <ProjectList comments={thought.comments} />
-      </div>
+      </div> */}
       <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <ProjectForm thoughtId={thought._id} />
+        <ProjectForm projectId={Project._id} />
       </div>
     </div>
   );
