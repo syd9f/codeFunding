@@ -1,4 +1,5 @@
 const { Schema, Types } = require('mongoose');
+const mongoose = require('mongoose');
 
 //most of this is referencing NoSql activity 22
 const donationSchema = new Schema({
@@ -16,7 +17,7 @@ const donationSchema = new Schema({
         required: true,
     },
     amount: {
-        type: Int,
+        type: Number,
         required: true
     }
 },
@@ -30,5 +31,5 @@ const donationSchema = new Schema({
 
 
 
-const Donation = model('Donation', donationSchema);
-module.exports = Donation;
+const donation = mongoose.model('donation', donationSchema);
+module.exports = donation;

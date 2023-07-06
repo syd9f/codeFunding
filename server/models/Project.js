@@ -1,5 +1,6 @@
 const { Schema, model } = require('mongoose');
 const likeSchema = require('./Like')
+const donation = require('./Donation');
 
 //most of this is referencing NoSql activity 22
 const projectSchema = new Schema({
@@ -25,7 +26,10 @@ const projectSchema = new Schema({
         required: true,
     },
     likes: [likeSchema],
-    donations: [donationsSchema]
+    donations: [{
+        type: Schema.Types.ObjectId,
+        ref: 'donation'
+    }]
     },
     {
     toJSON: { 
@@ -37,11 +41,11 @@ const projectSchema = new Schema({
 });
 
 
-thoughtSchema
-    .virtual('likeCount')
-    .get(function () {
-        return `${this.likes.length}`;
-    });
+// thoughtSchema
+//     .virtual('likeCount')
+//     .get(function () {
+//         return `${this.likes.length}`;
+//     });
 
 const Project = model('Project', projectSchema);
 module.exports = Project;
