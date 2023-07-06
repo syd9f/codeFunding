@@ -14,6 +14,11 @@ const userSchema = new Schema({
         unique: true,
         match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
     },
+    password: {
+        type: String,
+        required: true,
+        trim: true
+    },
     projects: [
         {
         type: Schema.Types.ObjectId,
@@ -34,7 +39,9 @@ userSchema
     .get(function () {
         return `${this.projects.length}`;
     });
-
+userSchema.methods.isCorrectPassword = function(password) {
+        return password === this.password;
+      };
 
 const User = model('User', userSchema);
 module.exports = User;
