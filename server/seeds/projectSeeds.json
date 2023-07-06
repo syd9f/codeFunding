@@ -1,75 +1,50 @@
 [
   {
-    "title": "Awesome Web Development Course",
-    "description": "A comprehensive web development course covering HTML, CSS, and JavaScript.",
-    "creator": "John Doe",
-    "targetAmount": 5000,
-    "currentAmount": 2500,
-    "endDate": "2023-07-15",
-    "image": "https://example.com/images/webdev-course.jpg"
+    "projectTitle": "Awesome Web Development Course",
+    "projectDescription": "A comprehensive web development course covering HTML, CSS, and JavaScript.",
+    "user": "John Doe"
   },
   {
-    "title": "Mobile App Development Tool",
-    "description": "An innovative tool for building cross-platform mobile applications easily.",
-    "creator": "Jane Smith",
-    "targetAmount": 10000,
-    "currentAmount": 7500,
-    "endDate": "2023-08-30",
-    "image": "https://example.com/images/mobile-app-tool.jpg"
+    "projectTitle": "Mobile App Development Tool",
+    "projectDescription": "An innovative tool for building cross-platform mobile applications easily.",
+    "user": "Jane Smith",
+    "donations": 7500
   },
   {
-    "title": "Open-Source Game Engine",
-    "description": "A powerful open-source game engine with advanced features and a friendly community.",
-    "creator": "Alex Johnson",
-    "targetAmount": 20000,
-    "currentAmount": 18000,
-    "endDate": "2023-09-20",
-    "image": "https://example.com/images/game-engine.jpg"
+    "projectTitle": "Open-Source Game Engine",
+    "projectDescription": "A powerful open-source game engine with advanced features and a friendly community.",
+    "user": "Alex Johnson",
+    "donations": 18000
   },
   {
-      "title": "AI-Powered Chatbot",
-      "description": "A chatbot powered by artificial intelligence to provide automated customer support.",
-      "creator": "Sarah Johnson",
-      "targetAmount": 8000,
-      "currentAmount": 3500,
-      "endDate": "2023-10-10",
-      "image": "https://example.com/images/chatbot.jpg"
+      "projectTitle": "AI-Powered Chatbot",
+      "projectDescription": "A chatbot powered by artificial intelligence to provide automated customer support.",
+      "user": "Sarah Johnson",
+      "donations": 3500
     },
     {
-      "title": "E-commerce Website Template",
-      "description": "A fully customizable and responsive e-commerce website template for online businesses.",
-      "creator": "Michael Anderson",
-      "targetAmount": 5000,
-      "currentAmount": 1200,
-      "endDate": "2023-09-30",
-      "image": "https://example.com/images/ecommerce-template.jpg"
+      "projectTitle": "E-commerce Website Template",
+      "projectDescription": "A fully customizable and responsive e-commerce website template for online businesses.",
+      "user": "Michael Anderson",
+      "donations": 1200
     },
     {
-      "title": "Social Media Analytics Tool",
-      "description": "A tool that analyzes social media data to provide insights and metrics for marketing campaigns.",
-      "creator": "Emily Brown",
-      "targetAmount": 10000,
-      "currentAmount": 6500,
-      "endDate": "2023-11-15",
-      "image": "https://example.com/images/social-media-analytics.jpg"
+      "projectTitle": "Social Media Analytics Tool",
+      "projectDescription": "A tool that analyzes social media data to provide insights and metrics for marketing campaigns.",
+      "user": "Emily Brown",
+      "donations": 6500
     },
     {
-      "title": "Recipe Sharing App",
-      "description": "An app that allows users to share and discover recipes from various cuisines.",
-      "creator": "David Wilson",
-      "targetAmount": 3000,
-      "currentAmount": 900,
-      "endDate": "2023-08-20",
-      "image": "https://example.com/images/recipe-app.jpg"
+      "projectTitle": "Recipe Sharing App",
+      "projectDescription": "An app that allows users to share and discover recipes from various cuisines.",
+      "user": "David Wilson",
+      "donations": 900
     },
     {
-      "title": "Fitness Tracking Dashboard",
-      "description": "A dashboard for tracking fitness activities, setting goals, and monitoring progress.",
-      "creator": "Sophia Roberts",
-      "targetAmount": 4000,
-      "currentAmount": 2000,
-      "endDate": "2023-10-05",
-      "image": "https://example.com/images/fitness-dashboard.jpg"
+      "projectTitle": "Fitness Tracking Dashboard",
+      "projectDescription": "A dashboard for tracking fitness activities, setting goals, and monitoring progress.",
+      "userr": "Sophia Roberts",
+      "donations": 2000
     }
   ]
   
