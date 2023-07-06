@@ -4,13 +4,13 @@ const donation = require('./Donation');
 
 //most of this is referencing NoSql activity 22
 const projectSchema = new Schema({
-    title: {
+    projectTitle: {
         type: String,
         required: true,
         minLength: 1,
         maxLength: 50
     },
-    description: {
+    projectDescription: {
         type: String,
         required: true,
         minLength: 1,
