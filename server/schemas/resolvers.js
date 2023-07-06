@@ -48,7 +48,7 @@ const resolvers = {
 
       return { token, user };
     },
-    addProject: async (parent, { projectInput }, context) => {
+    createProject: async (parent, { projectInput }, context) => {
       if (context.user) {
         const project = await Project.create({
           ...projectInput,
