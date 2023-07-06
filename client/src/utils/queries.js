@@ -1,35 +1,39 @@
 import { gql } from '@apollo/client';
 
 export const GET_USER = gql`
-  query GetUser {
-    getUser {
-      id
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
       email
-      // Include any additional user fields you want to retrieve
+      projects {
+        _id
+        projectTitle
+        projectDescription
+        createdAt
+      }
     }
   }
 `;
 
 export const GET_PROJECT = gql`
-  query GetProject($projectId: ID!) {
-    getProject(projectId: $projectId) {
-      id
-      title
-      description
-      goalAmount
-      // Include any additional project fields you want to retrieve
+  query project($projectId: ID!) {
+    project(projectId: $projectId) {
+      _id
+      projectTitle
+      projectDescription
+      donations
     }
   }
 `;
 
 export const GET_PROJECTS = gql`
-  query GetProjects {
-    getProjects {
-      id
-      title
-      description
-      goalAmount
-      // Include any additional project fields you want to retrieve
+  query projects {
+    projects {
+      _id
+      projectTitle
+      projectDescription
+      donations
     }
   }
 `;
@@ -40,11 +44,11 @@ export const QUERY_ME = gql`
       _id
       username
       email
-      thoughts {
+      projects {
         _id
-        thoughtText
-        thoughtAuthor
-        createdAt
+        projectTitle
+        projectDescription
+        donations
       }
     }
   }
