@@ -37,7 +37,10 @@ const ProjectList = ({
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{project.projectText}</p>
+              <p>{project.projectTitle}</p>
+            </div>
+            <div className="card-body bg-light p-2">
+              <p>{project.projectDescription}</p>
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
