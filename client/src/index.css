@@ -1043,16 +1043,16 @@ a:hover {
 }
 
 .btn.btn-info:hover {
-  background-color: #8181b6;
+  background-color: #d0d0d7;
 }
 
 .btn.btn-light {
-  background-color: #d9e9e8;
+  background-color: #bacbe1;
   color: #1a1a1a;
 }
 
 .btn.btn-light:hover {
-  background-color: #84b8b4;
+  background-color: #d0d0d7;
 }
 
 .btn.btn-dark {
@@ -1752,7 +1752,11 @@ label form [type='radio'] {
 
 .buttons-section {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons-section .btn {
+  margin: 0.2rem;
 }
 
 .logo-image {
