@@ -10,7 +10,7 @@ export const GET_USER = gql`
         _id
         projectTitle
         projectDescription
-        createdAt
+        donations
       }
     }
   }
