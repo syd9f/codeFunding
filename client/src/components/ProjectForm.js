@@ -10,6 +10,7 @@ import Auth from '../utils/auth';
 const ProjectForm = () => {
   const [projectTitle, setProjectTitle] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
+  const [donations, setDonations] = useState('');
 
   const [addProject, { error }] = useMutation(CREATE_PROJECT, {
     update(cache, { data: { addProject } }) {
@@ -41,12 +42,14 @@ const ProjectForm = () => {
         variables: {
           projectTitle,
           username: Auth.getProfile().data.username,
-          projectDescription
+          projectDescription,
+          donations
         },
       });
 
       setProjectTitle('');
       setProjectDescription('');
+      setDonations('');
     } catch (err) {
       console.error(err);
     }
@@ -59,6 +62,8 @@ const ProjectForm = () => {
       setProjectTitle(value);
     } else if (name === 'projectDescription') {
         setProjectDescription(value);
+    } else if (name === 'donations') {
+        setDonations(value);
     }
   };
 
@@ -90,6 +95,17 @@ const ProjectForm = () => {
                 value={projectDescription}
                 className="form-input w-100"
                 style={{ lineHeight: '2.0', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+            </div>
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="donations"
+                placeholder="Enter a Donation Goal"
+                value={donations}
+                className="form-input w-100"
+                style={{ lineHeight: '1.0', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
