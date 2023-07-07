@@ -8,9 +8,8 @@ import { GET_PROJECTS, GET_USER } from '../utils/queries';
 import Auth from '../utils/auth';
 
 const ProjectForm = () => {
-  const [projectText, setProjectText] = useState('');
-
-  const [characterCount, setCharacterCount] = useState(0);
+  const [projectTitle, setProjectTitle] = useState('');
+  const [projectDescription, setProjectDescription] = useState('');
 
   const [addProject, { error }] = useMutation(CREATE_PROJECT, {
     update(cache, { data: { addProject } }) {
@@ -40,12 +39,14 @@ const ProjectForm = () => {
     try {
       const { data } = await addProject({
         variables: {
-          projectText,
+          projectTitle,
           projectAuthor: Auth.getProfile().data.username,
+          projectDescription
         },
       });
 
-      setProjectText('');
+      setProjectTitle('');
+      setProjectDescription('');
     } catch (err) {
       console.error(err);
     }
@@ -54,9 +55,10 @@ const ProjectForm = () => {
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    if (name === 'projectText' && value.length <= 280) {
-      setProjectText(value);
-      setCharacterCount(value.length);
+    if (name === 'projectTitle' && value.length <= 280) {
+      setProjectTitle(value);
+    } else if (name === 'projectDescription') {
+        setProjectDescription(value);
     }
   };
 
@@ -66,22 +68,26 @@ const ProjectForm = () => {
 
       {Auth.loggedIn() ? (
         <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-          </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
             onSubmit={handleFormSubmit}
           >
             <div className="col-12 col-lg-9">
               <textarea
-                name="projectText"
-                placeholder="Here's a new project..."
-                value={projectText}
+                name="projectTitle"
+                placeholder="Enter New Project Title..."
+                value={projectTitle}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={handleChange}
+              ></textarea>
+            </div>
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="projectDescription"
+                placeholder="Enter Description of Project..."
+                value={projectDescription}
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
