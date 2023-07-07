@@ -21,9 +21,9 @@ const ProjectList = ({
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/profiles/${project.projectAuthor}`}
+                  to={`/profiles/${project.username}`}
                 >
-                  {project.projectAuthor} <br />
+                  {project.username} <br />
                   <span style={{ fontSize: '1rem' }}>
                     posted this project on {project.createdAt}
                   </span>
@@ -46,7 +46,7 @@ const ProjectList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/projects/${project._id}`}
             >
-              Join the discussion on this project.
+              Donate to this project!
             </Link>
           </div>
         ))}
