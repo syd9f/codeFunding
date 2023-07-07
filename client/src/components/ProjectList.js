@@ -39,6 +39,11 @@ const ProjectList = ({
             <div className="card-body bg-light p-2">
               <p>{project.projectText}</p>
             </div>
+            <div>
+            <input type="number" id="quantity" name="quantity" min="1">
+              </input>
+              <button>Donate</button>
+            </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/projects/${project._id}`}
