@@ -1187,7 +1187,7 @@ label form [type='radio'] {
 
 .container {
   width: 85%;
-  max-width: 1200px;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1733,6 +1733,17 @@ label form [type='radio'] {
   left: 0;
   top: 0;
 }
+/*Adjust the header to be reactive to smaller screens*/
+@media screen and (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-buttons {
+    margin-top: 10px;
+  }
+}
 
 .logo-section {
   display: flex;
@@ -1755,3 +1766,4 @@ label form [type='radio'] {
  background-color: #2d3e50;
   width: 100vw;
 }
+
