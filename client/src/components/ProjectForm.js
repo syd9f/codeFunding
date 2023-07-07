@@ -63,7 +63,10 @@ const ProjectForm = () => {
     } else if (name === 'projectDescription') {
         setProjectDescription(value);
     } else if (name === 'donations') {
-        setDonations(value);
+        const isValidNumber = !isNaN(Number(value));
+        if (isValidNumber || value === '') {
+            setDonations(value);
+        }
     }
   };
 
@@ -102,7 +105,7 @@ const ProjectForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="donations"
-                placeholder="Enter a Donation Goal"
+                placeholder="Enter a Donation Goal (Numbers only!)"
                 value={donations}
                 className="form-input w-100"
                 style={{ lineHeight: '1.0', resize: 'vertical' }}
