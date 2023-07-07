@@ -40,7 +40,7 @@ const ProjectForm = () => {
       const { data } = await addProject({
         variables: {
           projectTitle,
-          projectAuthor: Auth.getProfile().data.username,
+          username: Auth.getProfile().data.username,
           projectDescription
         },
       });
@@ -78,7 +78,7 @@ const ProjectForm = () => {
                 placeholder="Enter New Project Title..."
                 value={projectTitle}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '1.0', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
@@ -89,7 +89,7 @@ const ProjectForm = () => {
                 placeholder="Enter Description of Project..."
                 value={projectDescription}
                 className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                style={{ lineHeight: '2.0', resize: 'vertical' }}
                 onChange={handleChange}
               ></textarea>
             </div>
