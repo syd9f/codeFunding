@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProjectList = ({
   projects,
-  title,
+  projectTitle,
   showTitle = true,
   showUsername = true,
 }) => {
@@ -13,7 +13,7 @@ const ProjectList = ({
 
   return (
     <div>
-      {showTitle && <h3>{title}</h3>}
+      {showTitle && <h3>{projectTitle}</h3>}
       {projects &&
         projects.map((project) => (
           <div key={project._id} className="card mb-3">
