@@ -2,48 +2,48 @@
   {
     "projectTitle": "Awesome Web Development Course",
     "projectDescription": "A comprehensive web development course covering HTML, CSS, and JavaScript.",
-    "user": "John Doe"
+    "username": "FunkyMonkey23"
   },
   {
     "projectTitle": "Mobile App Development Tool",
     "projectDescription": "An innovative tool for building cross-platform mobile applications easily.",
-    "user": "Jane Smith",
+    "username": "WhimsicalWhale",
     "donations": 7500
   },
   {
     "projectTitle": "Open-Source Game Engine",
     "projectDescription": "A powerful open-source game engine with advanced features and a friendly community.",
-    "user": "Alex Johnson",
+    "username": "SillySloth42",
     "donations": 18000
   },
   {
       "projectTitle": "AI-Powered Chatbot",
       "projectDescription": "A chatbot powered by artificial intelligence to provide automated customer support.",
-      "user": "Sarah Johnson",
+      "username": "ZanyZebra99",
       "donations": 3500
     },
     {
       "projectTitle": "E-commerce Website Template",
       "projectDescription": "A fully customizable and responsive e-commerce website template for online businesses.",
-      "user": "Michael Anderson",
+      "username": "QuirkyQuokka",
       "donations": 1200
     },
     {
       "projectTitle": "Social Media Analytics Tool",
       "projectDescription": "A tool that analyzes social media data to provide insights and metrics for marketing campaigns.",
-      "user": "Emily Brown",
+      "username": "BubblyBee",
       "donations": 6500
     },
     {
       "projectTitle": "Recipe Sharing App",
       "projectDescription": "An app that allows users to share and discover recipes from various cuisines.",
-      "user": "David Wilson",
+      "username": "WackyWalrus",
       "donations": 900
     },
     {
       "projectTitle": "Fitness Tracking Dashboard",
       "projectDescription": "A dashboard for tracking fitness activities, setting goals, and monitoring progress.",
-      "userr": "Sophia Roberts",
+      "username": "CheerfulChameleon",
       "donations": 2000
     }
   ]

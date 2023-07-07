@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ProjectList = ({
   projects,
-  title,
+  projectTitle,
   showTitle = true,
   showUsername = true,
 }) => {
@@ -13,7 +13,7 @@ const ProjectList = ({
 
   return (
     <div>
-      {showTitle && <h3>{title}</h3>}
+      {showTitle && <h3>{projectTitle}</h3>}
       {projects &&
         projects.map((project) => (
           <div key={project._id} className="card mb-3">
@@ -21,9 +21,9 @@ const ProjectList = ({
               {showUsername ? (
                 <Link
                   className="text-light"
-                  to={`/profiles/${project.projectAuthor}`}
+                  to={`/profiles/${project.username}`}
                 >
-                  {project.projectAuthor} <br />
+                  {project.username} <br />
                   <span style={{ fontSize: '1rem' }}>
                     posted this project on {project.createdAt}
                   </span>
@@ -37,13 +37,16 @@ const ProjectList = ({
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{project.projectText}</p>
+              <p>{project.projectTitle}</p>
+            </div>
+            <div className="card-body bg-light p-2">
+              <p>{project.projectDescription}</p>
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/projects/${project._id}`}
             >
-              Join the discussion on this project.
+              Donate to this project!
             </Link>
           </div>
         ))}
