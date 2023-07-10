@@ -923,8 +923,13 @@ a:hover {
 
 /* BACKGROUND UTILS */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: #ffffff !important;
 }
+
+/* .bg-header {
+  background-color: #000141 !important;
+  
+} */
 
 .bg-info {
   background-color: #1bbc9b !important;
@@ -1033,12 +1038,12 @@ a:hover {
 }
 
 .btn.btn-info {
-  background-color: #1bbc9b;
+  background-color: #7d7d89;
   color: #ffffff;
 }
 
 .btn.btn-info:hover {
-  background-color: #31e1bd;
+  background-color: #8181b6;
 }
 
 .btn.btn-light {
@@ -1718,4 +1723,35 @@ label form [type='radio'] {
   .align-content-center-xl {
     align-content: center;
   }
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+}
+
+.buttons-section {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 450px; 
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.header-logo {
+ background-color: #2d3e50;
+  width: 100vw;
 }
