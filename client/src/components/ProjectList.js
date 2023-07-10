@@ -8,7 +8,13 @@ const ProjectList = ({
   showUsername = true,
 }) => {
   if (!projects.length) {
-    return <h3>No Projects Yet</h3>;
+    //return <h3>No Projects Yet</h3>;
+    //renders the following line in the center rather than the header
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <h3>No Projects Yet</h3>
+      </div>
+    );
   }
 
   return (
