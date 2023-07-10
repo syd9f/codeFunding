@@ -4,6 +4,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 const Footer = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    // Handle contact button click
+    // Implement logic for displaying the contact form or navigating to the contact page
+    // Consider adding contact form for future development 
+  };
+
   return (
     <footer className="w-100 mt-auto bg-secondary p-4">
       <div className="container text-center mb-5">
@@ -15,18 +22,13 @@ const Footer = () => {
             &larr; Go Back
           </button>
         )}
+        
         <h4>
-          Made with{' '}
-          <span
-            className="emoji"
-            role="img"
-            aria-label="heart"
-            aria-hidden="false"
-          >
-            ❤️
-          </span>{' '}
-          by the codeFunding team - Amy, Nastacia, and Sydnie.
+          Need Support? Reach out to us below!
         </h4>
+        <button className="btn btn-primary" onClick={handleContactClick}>
+          Contact Us
+        </button>
       </div>
     </footer>
   );
