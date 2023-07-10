@@ -10,6 +10,9 @@ const Home = () => {
   const { loading, data } = useQuery(GET_PROJECTS);
   const projects = data?.projects || [];
 
+  console.log('loading:', loading);
+  console.log('projects:', projects);
+
   return (
     <main>
       <div className="flex-row justify-center">
@@ -20,7 +23,7 @@ const Home = () => {
           ) : (
             <ProjectList
               projects={projects}
-              title="Project feed"
+              projectTitle="Project feed"
             />
           )}
         </div>

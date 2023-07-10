@@ -16,11 +16,6 @@ const projectSchema = new Schema({
         minLength: 1,
         maxLength: 500
     },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-        get: timestamp => new Date(timestamp).toLocaleString()
-    },
     username: {
         type: String,
         required: true,
