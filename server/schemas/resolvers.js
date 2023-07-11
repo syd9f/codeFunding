@@ -50,21 +50,22 @@ const resolvers = {
       return { token, user };
     },
     createProject: async (parent, { projectInput }, context) => {
+      const user = await User.findOne({ username });
       if (context.user) {
         const project = await Project.create({
           ...projectInput,
           createdBy: context.user._id,
         });
-
+    
         await User.findOneAndUpdate(
           { _id: context.user._id },
           { $addToSet: { projects: project._id } }
         );
-
+    
         return project;
       }
       throw new AuthenticationError('You need to be logged in!');
-    },
+    },    
     removeProject: async (parent, { projectId }, context) => {
       if (context.user) {
         const project = await Project.findOneAndDelete({
