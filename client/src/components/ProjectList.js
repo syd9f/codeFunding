@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { GET_PROJECTS } from '../utils/queries';
+// import { useMutation } from '@apollo/client';
 
 const ProjectList = ({
   projects,
@@ -19,25 +21,25 @@ const ProjectList = ({
 
   return (
     <div>
-      {showTitle && <h3>{projectTitle}</h3>}
+      {<h3>{projectTitle}</h3>}
       {projects &&
         projects.map((project) => (
           <div key={project._id} className="card mb-3">
             <h4 className="card-header bg-primary text-light p-2 m-0">
-              {showUsername ? (
+              { (
                 <Link
                   className="text-light"
                   to={`/profiles/${project.username}`}
                 >
                   {project.username} <br />
                   <span style={{ fontSize: '1rem' }}>
-                    posted this project on {project.createdAt}
+                    posted this project
                   </span>
                 </Link>
-              ) : (
+              )  (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You posted this project on {project.createdAt}
+                    You posted this project
                   </span>
                 </>
               )}

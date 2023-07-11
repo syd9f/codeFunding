@@ -12,7 +12,8 @@ const resolvers = {
       return User.findOne({ username }).populate('projects');
     },
     projects: async () => {
-      return Project.find().populate('createdBy');
+      return Project.find();
+      // .populate('createdBy');
     },
     project: async (parent, { projectId }) => {
       return Project.findOne({ _id: projectId }).populate('createdBy');
