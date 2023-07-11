@@ -50,7 +50,6 @@ export const QUERY_ME = gql`
         _id
         projectTitle
         projectDescription
-        donations
       }
     }
   }
