@@ -19,6 +19,7 @@ const resolvers = {
       return Project.findOne({ _id: projectId }).populate('createdBy');
     },
     me: async (parent, args, context) => {
+      console.log("hello this is the context: " + context.user);
       if (context.user) {
         return User.findOne({ _id: context.user._id }).populate('projects');
       }
