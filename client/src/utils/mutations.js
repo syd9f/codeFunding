@@ -26,13 +26,15 @@ export const LOGIN_USER = gql`
   }
 `;
 
+// , $donations: Float!
+// , donations: $donations
 export const CREATE_PROJECT = gql`
-  mutation createProject($projectTitle: String!, $projectDescription: String!, $donations: Float!) {
-    createProject(projectTitle: $projectTitle, projectDescription: $projectDescription, donations: $donations) {
+  mutation createProject($projectTitle: String!, $projectDescription: String!) {
+    createProject(projectTitle: $projectTitle, projectDescription: $projectDescription) {
       _id
       projectTitle
       projectDescription
-      donations
+      # donations
     }
   }
 `;
