@@ -22,8 +22,8 @@ const Home = () => {
             <div>Loading...</div>
           ) : (
             <ProjectList
-              projects={projects}
-              projectTitle="Project feed"
+              projects={ProjectList}
+              // projectTitle="Project feed"
             />
           )}
         </div>
