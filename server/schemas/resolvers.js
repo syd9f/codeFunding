@@ -50,11 +50,13 @@ const resolvers = {
       return { token, user };
     },
     createProject: async (parent, { projectInput }, context) => {
-      const user = await User.findOne({ username });
+      const user = await User.findOne(
+        { username: context.username }
+      );
       if (context.user) {
         const project = await Project.create({
           ...projectInput,
-          createdBy: context.user._id,
+          // createdBy: context.user._id,
         });
     
         await User.findOneAndUpdate(
