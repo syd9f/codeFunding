@@ -11,10 +11,10 @@ const typeDefs = gql`
 
   type Project {
     _id: ID!
-    title: String!
-    description: String!
+    projectTitle: String!
+    projectDescription: String!
     likes: Int!
-    donations: Int!
+    donations: [Donation!]
   }
 
   type Donation {

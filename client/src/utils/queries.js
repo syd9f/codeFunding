@@ -33,7 +33,9 @@ export const GET_PROJECTS = gql`
       _id
       projectTitle
       projectDescription
-      donations
+      donations {
+        _id
+      }
     }
   }
 `;
