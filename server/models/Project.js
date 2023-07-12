@@ -20,6 +20,11 @@ const projectSchema = new Schema({
         type: String,
         required: true,
     },
+    donationGoal: {
+        type: String,
+        required: true,
+    },
+    
     likes: [likeSchema],
     donations: [{
         type: Schema.Types.ObjectId,
