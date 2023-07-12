@@ -29,8 +29,8 @@ export const LOGIN_USER = gql`
 // , $donations: Float!
 // , donations: $donations
 export const CREATE_PROJECT = gql`
-  mutation createProject($projectTitle: String!, $projectDescription: String!) {
-    createProject(projectTitle: $projectTitle, projectDescription: $projectDescription) {
+  mutation createProject($projectTitle: String!, $projectDescription: String!, $donationGoal: Int!) {
+    createProject(projectTitle: $projectTitle, projectDescription: $projectDescription, donationGoal: $donationGoal) {
       _id
       projectTitle
       projectDescription

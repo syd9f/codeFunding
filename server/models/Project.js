@@ -16,10 +16,10 @@ const projectSchema = new Schema({
         minLength: 1,
         maxLength: 500
     },
-    username: {
-        type: String,
-        required: true,
-    },
+    // username: {
+    //     type: String,
+    //     required: true,
+    // },
     donationGoal: {
         type: String,
         required: true,
