@@ -62,7 +62,7 @@ const ProjectForm = () => {
       setProjectTitle(value);
     } else if (name === 'projectDescription') {
         setProjectDescription(value);
-    } else if (name === 'donations') {
+    } else if (name === 'donationGoal') {
         const isValidNumber = !isNaN(Number(value));
         if (isValidNumber || value === '') {
             setDonations(value);
@@ -72,7 +72,7 @@ const ProjectForm = () => {
 
   return (
     <div>
-      <h3>Fueling Code, Funding Ideas</h3>
+      <h3>Get your next big idea funded!</h3>
 
       {Auth.loggedIn() ? (
         <>

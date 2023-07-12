@@ -15,6 +15,7 @@ const typeDefs = gql`
     projectDescription: String!
     likes: Int!
     donations: [Donation!]
+    donationGoal: String!
   }
 
   type Donation {
