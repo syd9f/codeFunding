@@ -10,7 +10,7 @@ import Auth from '../utils/auth';
 const ProjectForm = () => {
   const [projectTitle, setProjectTitle] = useState('');
   const [projectDescription, setProjectDescription] = useState('');
-  const [donations, setDonations] = useState('');
+  const [donationGoal, setDonationGoal] = useState('');
 
   const [addProject, { error }] = useMutation(CREATE_PROJECT, {
     update(cache, { data: { addProject } }) {
@@ -41,15 +41,14 @@ const ProjectForm = () => {
       const { data } = await addProject({
         variables: {
           projectTitle,
-          username: Auth.getProfile().data.username,
           projectDescription,
-          donations
+          donationGoal: parseInt(donationGoal),
         },
       });
 
       setProjectTitle('');
       setProjectDescription('');
-      setDonations('');
+      setDonationGoal('');
     } catch (err) {
       console.error(err);
     }
@@ -65,7 +64,7 @@ const ProjectForm = () => {
     } else if (name === 'donationGoal') {
         const isValidNumber = !isNaN(Number(value));
         if (isValidNumber || value === '') {
-            setDonations(value);
+          setDonationGoal(value);
         }
     }
   };
@@ -104,9 +103,9 @@ const ProjectForm = () => {
 
             <div className="col-12 col-lg-9">
               <textarea
-                name="donations"
+                name="donationGoal"
                 placeholder="Enter a Donation Goal (Numbers only!)"
-                value={donations}
+                value={donationGoal}
                 className="form-input w-100"
                 style={{ lineHeight: '1.0', resize: 'vertical' }}
                 onChange={handleChange}

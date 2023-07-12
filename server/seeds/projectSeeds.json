@@ -64,28 +64,6 @@
         "abcdef012345678901234567",
         "0123456789abcdefabcdef01"
       ]
-    },
-    {
-      "projectTitle": "Recipe Sharing App",
-      "projectDescription": "An app that allows users to share and discover recipes from various cuisines.",
-      "username": "WackyWalrus",
-      "donationGoal": "Goal: $250.00",
-      "donations": [
-        "6123456789abcdef01234567",
-        "abcdef012345678901234567",
-        "0123456789abcdefabcdef01"
-      ]
-    },
-    {
-      "projectTitle": "Fitness Tracking Dashboard",
-      "projectDescription": "A dashboard for tracking fitness activities, setting goals, and monitoring progress.",
-      "username": "CheerfulChameleon",
-      "donationGoal": "Goal: $400.00",
-      "donations": [
-        "6123456789abcdef01234567",
-        "abcdef012345678901234567",
-        "0123456789abcdefabcdef01"
-      ]
     }
   ]
   
