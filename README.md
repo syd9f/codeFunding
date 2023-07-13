@@ -45,18 +45,16 @@ To run the tests for codeFunding, use the following command: `npm test`.
 
 ## Collaborators
 
-[Amy DiPiazza](https://github.com/amykateoc),
-
-[Nastacia Shershova](https://github.com/snastacia),
-
-[Sydnie Farrell](https://github.com/syd9f)
+- [Amy DiPiazza](https://github.com/amykateoc)
+- [Nastacia Shershova](https://github.com/snastacia)
+- [Sydnie Farrell](https://github.com/syd9f)
 
 ## Credits
 
 Code was debugged with the assistance of Class Instructor, Diego Struk Jaia, and TA, Enriquie Gomez. 
 
 Pulled example and references for code from the following activities: 
--Week 21-MERN (28-Stu_Mini-Project)
--Week 21-MERN (26-Stu-Resolver-Context)
--Week 22-State (28-Stu_Mini-Project)
--Week 22-State (24-Stu_Stripe)
+- Week 21-MERN (28-Stu_Mini-Project)
+- Week 21-MERN (26-Stu-Resolver-Context)
+- Week 22-State (28-Stu_Mini-Project)
+- Week 22-State (24-Stu_Stripe)
