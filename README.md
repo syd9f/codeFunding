@@ -7,7 +7,7 @@ Deployed link:
 ## Description
 
 codeFunding is a project that is designed for users to crowd fund for their coding projects. Users can create a project, select a project to donate to, and donate a chosen amount to help the project creators reach their goal!
-
+ 
 
 ## Table of Contents
 
